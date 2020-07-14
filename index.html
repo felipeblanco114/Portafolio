@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Felipe Blanco Muzzolón</title>
+        <link rel='stylesheet' href='style.css'>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,700;1,200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section class='banner' id='sec'>
+            <header>
+                <a href='#' class='logo'>FBM</a>
+                <div id='toggle' onclick='toggle()'></div>
+            </header>
+
+            <div class='content'>
+                <h2>Bienvenidos!<br> soy <span>Felipe Blanco Muzzolón</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestias cupiditate ipsum maxime minus. Dicta adipisci sequi minima pariatur commodi
+                    ius molestias, quae mollitia quasi doloremque vitae expedita nemo quis laboriosam.
+                </p>
+                <a href='#'>Conocer mejor</a>
+            </div>
+
+            <ul class='sci'>
+                <li><a target='_blank' href='https://www.facebook.com/Feluuuuu/'> <img src='img/facebook.png'> </a></li>
+                <li><a target='_blank' href='https://www.instagram.com/felu.blanco/'> <img src='img/instagram.png'> </a></li>
+                <li><a target='_blank' href='https://www.linkedin.com/in/felipe-blanco-muzzol%C3%B3n-962a40185/'> <img src='img/linkedin.png'> </a></li>
+                <li><a target='_blank' href='https://github.com/felipeblanco114'> <img src='img/github.png'> </a></li>
+            </ul>
+        </section>
+
+
+        <div id='navigation'>
+            <ul>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Acerca</a></li>
+                <li><a href='#'>Servicios</a></li>
+                <li><a href='#'>Portafolio</a></li>
+                <li><a href='#'>Contactar</a></li>
+            </ul>
+        </div>
+        <script type='text/javascript'>
+            function toggle() {
+                var sec = document.getElementById('sec');
+                var nav = document.getElementById('navigation');
+                sec.classList.toggle('active');
+                nav.classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>
