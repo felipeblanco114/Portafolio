@@ -6,6 +6,10 @@
 }
 body {
     background-color: black;
+    transition: background 0.2s linear;
+}
+body.light {
+    background-color: #f3bac3;
 }
 header {
     position: absolute;
@@ -28,15 +32,27 @@ header .logo {
     letter-spacing: 2px;
     transition: 0.6s;
 }
+body.light .logo {
+    color: black;
+}
 header .logo:hover {
     color: #f3bac3;
     transition: 0.2s;
+}
+body.light .logo:hover {
+    color: white;
 }
 header #toggle {
     position: relative;
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+body.light header #toggle:before {
+    background: black;
+}
+body.light header #toggle:after {
+    background: black;
 }
 header #toggle:before {
     content: '';
@@ -69,7 +85,7 @@ header #toggle:after {
     width: 100%;
     min-height: 100vh;
     padding: 100px;
-    background: url(img/felipe.png);
+    background: url(../img/felipe.png);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -79,6 +95,11 @@ header #toggle:after {
 .banner.active {
     transform: translateX(-200px);
 }
+body.light .banner {
+    transition: 0.2s linear;
+    background: #f3bac3;
+}
+
 ul li {
     list-style: none;
 }
@@ -93,6 +114,15 @@ ul li {
     display: grid;
     place-items: center;
     transition: 0.5s;
+}
+body.light #navigation {
+    background-color: black;
+}
+body.light #navigation ul li a {
+    color: #f3bac3;
+}
+body.light #navigation ul li a:hover {
+    color: white;
 }
 #navigation.active {
     right: 0;
@@ -130,6 +160,24 @@ ul li {
     color: #fff;
     font-weight: 300;
 }
+/*CONTENT LIGHT*/
+body.light .content h2 {
+    color: black;
+}
+body.light .content span {
+    color: white;
+}
+body.light .content p {
+    color: black;
+}
+body.light .content a {
+    color: #f3bac3;
+    background-color: black;
+}
+body.light .content a:hover {
+    color: white;
+    background-color: black;
+}
 .content a {
     position: relative;
     display: inline-block;
@@ -161,14 +209,74 @@ ul li {
     border: 1px solid #fff;
     margin: 10px 0 0;
     transition: 0.2s;
+    right: -6px;
+}
+body.light .sci li a {
+    border-color: black;
 }
 .sci li a:hover {
     background: #fff;
+}
+body.light .sci li a:hover {
+    background: black;
 }
 .sci li a img {
     max-width: 20px;
     filter: invert(1);
     mix-blend-mode: difference;
+}
+/*Light and dark toggle */
+.lights {
+    position: relative;
+    right: -450px;
+
+}
+.label {
+    display: flex;
+    width: 50px;
+    height: 26px;
+    background-color: #111;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.3);
+    margin-top: 2.3px;
+}
+.label i {
+    margin-top: 4px;
+}
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+.fa-moon {
+    color: #fff;
+    align-items: center;
+    margin-left: 2px;
+}
+.fa-sun {
+    color: #f3bac3;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+i img { 
+    max-width: 20px;
+}
+.ball {
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
 }
 @media (max-width: 767px) {
     header {

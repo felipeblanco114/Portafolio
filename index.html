@@ -4,13 +4,23 @@
         <meta charset='UTF-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Felipe Blanco Muzzolón</title>
-        <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='css/style.css'>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,700;1,200&display=swap" rel="stylesheet">
     </head>
     <body>
         <section class='banner' id='sec'>
             <header>
                 <a href='#' class='logo'>FBM</a>
+
+                <div class='lights'>
+                    <input type='checkbox' class='checkbox' id='checkbox'>
+                    <label for='checkbox' class='label'>
+                        <i class='fas fa-moon'><img src='img/moon.png'></i>
+                        <i class='fas fa-sun'>☼</i>
+                        <div class='ball'></div>
+                    </label>
+                </div>
+
                 <div id='toggle' onclick='toggle()'></div>
             </header>
 
@@ -48,6 +58,10 @@
                 sec.classList.toggle('active');
                 nav.classList.toggle('active');
             }
+            const checkbox = document.getElementById('checkbox');
+            checkbox.addEventListener('change', () => {
+                document.body.classList.toggle('light');
+            });
         </script>
     </body>
 </html>
