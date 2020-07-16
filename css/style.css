@@ -257,7 +257,6 @@ body.light .sci li a:hover {
 .fa-moon {
     color: #fff;
     align-items: center;
-    margin-left: 2px;
 }
 .fa-sun {
     color: #f3bac3;
@@ -266,21 +265,132 @@ body.light .sci li a:hover {
     margin-bottom: 5px;
 }
 i img { 
-    max-width: 20px;
+    max-width: 19px;
 }
 .ball {
-    width: 22px;
-    height: 22px;
-    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    background-color: #fff17c;
     position: absolute;
-    top: 2px;
+    top: 2.7px;
     left: 2px;
     border-radius: 50%;
     transition: transform 0.2s linear;
 }
+body.light .ball {
+    background-color: #f3bac3;
+}
+
+/*CARD*/
+.card {
+    position: absolute;
+    top: 350px;;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
+}
+.card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff17c;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 0.5s;
+}
+.card .front img {
+    max-height: 275px;
+    margin-left: 13px;
+    margin-top: 62px;
+}
+.card:hover .front {
+    transform: rotateX(-180deg);
+}
+body.light .card .front {
+    background: black;
+}
+body.light .card .back {
+    background: black;
+    color: #f3bac3;
+}
+body.light .card .back:before {
+    background: rgba(255,255,255,0.2);
+}
+
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff17c;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 0.5s;
+}
+.card .back:before {
+    content: '';
+    position: absolute;
+    left: 33%;
+    top: 0;
+    width: 33%;
+    height: 100%;
+    background: #fff7b7;
+}
+
+.card:hover .back {
+    transform: rotateX(0deg);
+}
+.card .back .details {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+.card .back .details h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.4rem;
+
+}
+.card .back .details span {
+    color: #55513c;
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+body.light .back .details span {
+    color: white;
+}
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.social-icons img {
+    max-width: 40px;
+}
+body.light .social-icons img {
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
 @media (max-width: 767px) {
     header {
         padding: 2px 50px;
+        top: 2.4rem;
+    }
+    .lights {
+        display: none;
     }
     .banner {
         padding: 100px 50px 150px;
